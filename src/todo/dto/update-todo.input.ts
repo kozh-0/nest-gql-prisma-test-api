@@ -1,5 +1,6 @@
 import { CreateTodoInput } from './create-todo.input';
 import { InputType, Field, Int, PartialType } from '@nestjs/graphql';
+import { Prop } from 'src/props/entities/prop.entity';
 
 @InputType()
 export class UpdateTodoInput extends PartialType(CreateTodoInput) {
@@ -8,4 +9,7 @@ export class UpdateTodoInput extends PartialType(CreateTodoInput) {
 
   @Field()
   title: string;
+
+  @Field()
+  props?: Prop[];
 }

@@ -23,6 +23,7 @@ export class TodoResolver {
     return this.todoService.findOne(id);
   }
 
+  // засунуть создание пропсов
   @Mutation(() => Todo)
   updateTodo(@Args('updateTodoInput') updateTodoInput: UpdateTodoInput) {
     return this.todoService.update(updateTodoInput.id, updateTodoInput);

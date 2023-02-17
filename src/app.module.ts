@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { TodoModule } from './todo/todo.module';
 import { PrismaService } from './prisma/prisma.service';
+import { PropsModule } from './props/props.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { PrismaService } from './prisma/prisma.service';
       sortSchema: true,
     }),
     TodoModule,
+    PropsModule,
   ],
   providers: [PrismaService],
 })

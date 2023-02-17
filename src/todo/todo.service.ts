@@ -9,7 +9,10 @@ export class TodoService {
 
   async create(createTodoInput: CreateTodoInput) {
     return await this.prisma.todo.create({
-      data: { title: createTodoInput.title },
+      data: {
+        title: createTodoInput.title,
+        props: createTodoInput.props,
+      },
     });
   }
 

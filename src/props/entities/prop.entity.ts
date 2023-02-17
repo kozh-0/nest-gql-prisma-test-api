@@ -1,20 +1,13 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Prop } from 'src/props/entities/prop.entity';
 // чтобы генерилась gql схема надо писать этот декоратор
 @ObjectType()
-export class Todo {
+export class Prop {
   @Field(() => Int)
   id: number;
 
   @Field()
-  title: string;
-
-  @Field((type) => [Prop], { nullable: true })
-  props: Prop[];
+  completed: boolean;
 
   @Field()
-  createdAt: Date;
-
-  @Field()
-  updatedAt: Date;
+  type: string;
 }
